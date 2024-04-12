@@ -1,6 +1,13 @@
+import 'Employee.dart';
 import 'Person.dart';
+import 'Student.dart';
+import 'enums/EmployeeType.dart';
+import 'enums/StudentAllowance.dart';
 
-void main() {}
+void main() {
+  // Call in here the function you want to test/try then run it.
+
+}
 
 void teenagerList() {
   List<Person> listOfPeople = [
@@ -29,7 +36,7 @@ void setOfPeople() {
 }
 
 void marksMap() {
-  // MAP: key value pairs
+  // MAP: object of key value pairs
   Map<String, int> marks = {"Math": 90, "English": 89, "Science": 95};
   marks["Marketing"] = 90; // Allowed. UNLIKE in List this will error
   print(marks);
@@ -50,4 +57,25 @@ void listedMapofSubjects() {
       print('$key: $value');
     });
   }).toList();
+}
+
+void studentAllowance() {
+  List<Student> students = [
+    Student("John", StudentAllowance.firstHonor),
+    Student("Peter", StudentAllowance.secondHonor),
+    Student("James", StudentAllowance.thirdHonor),
+    Student("Judas", null)
+  ];
+
+  students.map((e) => e.studentDetails()).toList();
+}
+
+void employeeList() {
+  List<Employee> employees = [
+    Employee("Matthew", EmployeeType.finance),
+    Employee("Mark", EmployeeType.se),
+    Employee("Luke", EmployeeType.hr)
+  ];
+
+  employees.map((e) => e.getType()).toList();
 }
