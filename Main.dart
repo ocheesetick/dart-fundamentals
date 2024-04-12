@@ -1,10 +1,8 @@
 import 'Person.dart';
 
-void main() {
-  final person = Person(name: "JT", 12);
-  print(Person.greeting); // Without instance, will not consume more memory
-  print(person.name);
+void main() {}
 
+void teenagerList() {
   List<Person> listOfPeople = [
     Person(name: "Matthew", 18),
     Person(name: "Mark", 19),
@@ -12,8 +10,10 @@ void main() {
   ];
 
   final teenFilter = listOfPeople.where((person) => person.age < 20).toList();
-  //print(teenFilter.toString());
+  print(teenFilter.toString());
+}
 
+void setOfPeople() {
   // SET: removed all the existing repeating elements
   final john = Person(21, name: "John");
   Set<Person> setOfPeople = {
@@ -24,15 +24,20 @@ void main() {
     john,
     john
   };
-  //print(setOfPeople.toString()); // Matt, Mark, Luke, John
 
+  print(setOfPeople.toString()); // Matt, Mark, Luke, John
+}
+
+void marksMap() {
   // MAP: key value pairs
   Map<String, int> marks = {"Math": 90, "English": 89, "Science": 95};
   marks["Marketing"] = 90; // Allowed. UNLIKE in List this will error
-  // print(marks);
+  print(marks);
   marks.remove("Math");
-  // print(marks);
+  print(marks);
+}
 
+void listedMapofSubjects() {
   // LIST with MAP
   List<Map<String, int>> subjectMarks = [
     {"Geometry": 90, "Physics": 87},
